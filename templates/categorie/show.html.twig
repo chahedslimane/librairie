@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ categorie.nom }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>{{ categorie.nom }}</h1>
+
+        <div class="row mt-4">
+            {% for livre in categorie.livres %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ livre.titre }}</h5>
+                            <p class="card-text">{{ livre.auteur }}</p>
+                            <a href="{{ path('app_livre_show', {'id': livre.id}) }}" class="btn btn-primary">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col">
+                    <p>Aucun livre dans cette catégorie.</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <a href="{{ path('app_categorie_index') }}" class="btn btn-secondary mt-3">Retour à la liste</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue à la Librairie{% endblock %}
+
+{% block body %}
+    <div class="welcome-section">
+        <div class="container">
+            <h1 class="welcome-title">Bienvenue dans notre Librairie</h1>
+            <p class="welcome-text">Découvrez notre vaste collection de livres, des classiques intemporels aux dernières nouveautés.</p>
+            <div class="mt-4">
+                <a href="{{ path('app_livre_index') }}" class="btn btn-primary btn-lg me-3">Découvrir nos livres</a>
+                <a href="{{ path('app_categorie_index') }}" class="btn btn-outline-light btn-lg">Parcourir les catégories</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">📚 Large Collection</h3>
+                            <p class="card-text">Des milliers de livres dans tous les genres pour satisfaire votre soif de lecture.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">🌟 Nouveautés</h3>
+                            <p class="card-text">Découvrez les dernières sorties et restez à jour avec les tendances littéraires.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">📖 Catégories</h3>
+                            <p class="card-text">Une organisation claire par catégories pour trouver facilement votre prochain livre.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
